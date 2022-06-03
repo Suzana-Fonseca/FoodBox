@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FoodBox</title>
+  </head>
+
+  <body>
+    <div class="div-top">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+
+    <h3>Primeiro seu prato:</h3>
+
+    <div id="firstPlate" class="plates" onclick="selectFirst()">
+      <img src="./assets/img-frango.jpg" alt="Frango Yin-Yang" />
+      <h4>Frango Yin-Yang</h4>
+      <p>Acompanha batata e salada</p>
+      <p><strong>R$ 19,90</strong></p>
+    </div>
+    <div id="secondPlate" class="plates" onclick="selectSecond()">
+      <img src="./assets/img-carne.jpg" alt="Carne e salada" />
+      <h4>Carne e salada</h4>
+      <p>Partida ao meio para parecer mais carne</p>
+      <p><strong>R$ 24,90</strong></p>
+    </div>
+
+    <h3>Agora sua bebida:</h3>
+
+    <div id="firstDrink" class="plates" onclick="selectFirstDrink()">
+      <img src="./assets/img-coca.jpg" alt="Coca-cola lata" />
+      <h4>Coca-Cola gelada</h4>
+      <p>Normal, zero ou stevia. Vai na sorte.</p>
+      <p><strong>R$ 5,90</strong></p>
+    </div>
+    <div id="secondDrink" class="plates" onclick="selectSecondDrink()">
+      <img src="./assets/img-refresco.jpg" alt="Refrescos" />
+      <h4>Refresco</h4>
+      <p>Podia ser suco mas leva água</p>
+      <p><strong>R$ 4,90</strong></p>
+    </div>
+
+    <h3>Sobremesas:</h3>
+
+    <div id="firstDessert" class="plates" onclick="selectFirstDessert()">
+      <img src="./assets/img-torta.jpg" alt="Torta de chocolate" />
+      <h4>Torta de chocolate</h4>
+      <p>Chocolate meio amargo e café.</p>
+      <p><strong>R$ 15,90</strong></p>
+    </div>
+    <div id="secondDessert" class="plates" onclick="selectSecondDessert()">
+      <img src="./assets/img-pudim.jpg" alt="Pudim de leite" />
+      <h4>Pudim de leite</h4>
+      <p>Apenas um lindo e brilhante pudim</p>
+      <p><strong>R$ 4,90</strong></p>
+    </div>
+
+    <button id="finish" onclick="finalizeOrder()">
+      <strong>Finalizar pedido</strong>
+    </button>
+
+    <script>
+      let plate
+      let drink
+      let dessert
+
+      function selectFirst() {
+        document.getElementById('firstPlate').style.borderColor = 'green'
+        document.getElementById('secondPlate').style.borderColor = 'white'
+        plate = 'Frango Yin-Yang'
+      }
+
+      function selectSecond() {
+        document.getElementById('secondPlate').style.borderColor = 'green'
+        document.getElementById('firstPlate').style.borderColor = 'white'
+        plate = 'Carne e salada'
+      }
+
+      function selectFirstDrink() {
+        document.getElementById('firstDrink').style.borderColor = 'green'
+        document.getElementById('secondDrink').style.borderColor = 'white'
+        drink = 'Coca-Cola gelada'
+      }
+
+      function selectSecondDrink() {
+        document.getElementById('secondDrink').style.borderColor = 'green'
+        document.getElementById('firstDrink').style.borderColor = 'white'
+        drink = 'Refresco'
+      }
+
+      function selectFirstDessert() {
+        document.getElementById('firstDessert').style.borderColor = 'green'
+        document.getElementById('secondDessert').style.borderColor = 'white'
+        dessert = 'Torta de chocolate'
+      }
+
+      function selectSecondDessert() {
+        document.getElementById('secondDessert').style.borderColor = 'green'
+        document.getElementById('firstDessert').style.borderColor = 'white'
+        dessert = 'Pudim de leite'
+      }
+
+      function finalizeOrder() {
+        document.getElementById('finish')
+
+        let order
+        order =
+          'Olá! Eu gostaria de fazer o seguinte pedido: ' +
+          plate +
+          ', ' +
+          drink +
+          ' e ' +
+          dessert +
+          '.'
+
+        window.open('https://wa.me/+5571983011507?text=' + order)
+        /* (link para enviar para o whats app: https://wa.me/+5571983011507?text=mensagem)  */
+      }
+    </script>
+  </body>
+</html>
